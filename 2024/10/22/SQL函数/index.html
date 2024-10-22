@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Category: hexo | 小喻的博客</title>
+  <title>SQL函数 | 小喻的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="小喻的博客">
-<meta property="og:url" content="http://example.com/categories/hexo/index.html">
+  <meta name="description" content="文本字符串函数 concat 表达式：concat（文本1，文本2····文本n） 含义：文本字符串拼接 1select concat（’hello’,’mysql’）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL函数">
+<meta property="og:url" content="http://example.com/2024/10/22/SQL%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="小喻的博客">
+<meta property="og:description" content="文本字符串函数 concat 表达式：concat（文本1，文本2····文本n） 含义：文本字符串拼接 1select concat（’hello’,’mysql’）">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-22T06:22:26.965Z">
+<meta property="article:modified_time" content="2024-10-22T08:56:32.590Z">
 <meta property="article:author" content="喻">
 <meta name="twitter:card" content="summary">
   
@@ -217,69 +221,354 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/06/15/hello-world/" class="archive-article-date">
-        <time datetime="2023-06-15T01:46:18.573Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-15</time>
-</a>
+            <!-- 目录内容 -->
+        
+<!-- 目录内容结束 -->
 
-        </div>
-    	 
+
+<article id="post-SQL函数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/06/15/hello-world/" target="_blank">Hello World</a>
   
+    <h1 class="article-title" itemprop="name">
+      SQL函数
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2024/10/22/SQL%E5%87%BD%E6%95%B0/" class="archive-article-date">
+        <time datetime="2024-10-22T06:22:26.965Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-22</time>
+</a>
+
+  
+  
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">508字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="文本字符串函数"><a href="#文本字符串函数" class="headerlink" title="文本字符串函数"></a>文本字符串函数</h1><blockquote>
+<p><strong>concat</strong></p>
+<p>表达式：concat（文本1，文本2····文本n）</p>
+<p>含义：文本字符串拼接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select concat（’hello’,’mysql’）</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<span id="more"></span>
+
+<blockquote>
+<p><strong>substring</strong></p>
+<p>表达式：substring（文本字符串&#x2F;字段，start num，截取长度）</p>
+<p>含义：文本截取函数，参数二是从哪一位开始，参数三是截取的长度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Select substring（’hello mysql’,2,3）</span><br><span class="line"></span><br><span class="line">SELECT SUBSTRING(商品编号,2,3) FROM 查询数据表;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><strong>lower函数和upper函数</strong></p>
+<p>表达式：（字符串）</p>
+<p>含义：lower函数将字符串转为小写；upper将字符串转为大写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select	lower（‘ABC’）,upper（‘abc’）</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><strong>lpad函数和rpad函数</strong></p>
+<p>表达式：（字符串，字符串长度，字符串）</p>
+<p>含义：lpad为左填充，用参数三对参数一的左边进行填充，使整体达到参数二的长度；rpad为右填充，从右边填充参数三，是整体达到参数二的长度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select lpad(‘sc’,5,’*’),rpad(‘sc’,5,’*’)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><strong>trim</strong></p>
+<p>表达式：（字符串）</p>
+<p>含义：去除头部和尾部的空格</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select	trim（‘ A B C ’）</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<blockquote>
+<p><strong>length和char_length</strong></p>
+<p>表达式：（字符串）</p>
+<p>含义：length返回字符串字节数，char_length返回字符串字符数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select length(‘abc’)</span><br><span class="line"></span><br><span class="line">select char_length(‘abc’)</span><br></pre></td></tr></table></figure>
+
+<p>utf8编码：一个汉字3个字节，一个数字或字母1个字节</p>
+<p>GBK编码：一个汉字2个字节，一个数字或字母1个字节</p>
+</blockquote>
+<h1 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h1><blockquote>
+<p><strong>ceil</strong></p>
+<p>表达式：ceil（x）</p>
+<p>含义：向上取整</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select ceil（3.14）</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<blockquote>
+<p><strong>floor</strong></p>
+<p>表达式：floor（x）</p>
+<p>含义：向下取整</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select floor（3.14）</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<blockquote>
+<p><strong>mod</strong></p>
+<p>表达式：mod（x，y）</p>
+<p>含义：返回x&#x2F;y的模，也就是取余</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select mod（3，4）</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<blockquote>
+<p><strong>rand</strong></p>
+<p>表达式：rand（）</p>
+<p>含义：返回0到1的随机数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select rand（）</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<blockquote>
+<p><strong>round</strong></p>
+<p>表达式：round（x，y）</p>
+<p>含义：返回x的y位小数值，四舍五入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select round（3.14159，4）</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<blockquote>
+<p><strong>truncate</strong></p>
+<p>表达式：truncate（x，y）</p>
+<p>含义：返回x的y位小数值，截取y位后面的小数，不四舍五入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select truncate（3.14159，4）</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<blockquote>
+<p><strong>format</strong></p>
+<p>表达式：format（x，y）</p>
+<p>含义：返回x的y位小数值，如果x不足y位小数，会在后面补0直到补齐y位小数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select format（3.14，4）</span><br></pre></td></tr></table></figure>
+
+</blockquote>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/zifubao.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          喻
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://example.com/2024/10/22/SQL函数/" title="SQL函数" target="_blank">http://example.com/2024/10/22/SQL函数/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
-          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/yu-tianqi/yu-tianqi.github.io.git" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/hexo/基础配置//" class="article-tag-list-link color5">基础配置</a>
+        			<a href="/categories/sql//" class="article-tag-list-link color4">sql</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/10/22/SQL%E5%87%BD%E6%95%B0/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2024/10/17/SQL%E9%80%9A%E7%94%A8%E8%AF%AD%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SQL通用语法及分类</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<div id="SOHUCS" sid="SQL函数" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -320,10 +609,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",

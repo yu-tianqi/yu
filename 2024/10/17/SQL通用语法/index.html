@@ -18,7 +18,7 @@
 <meta property="og:description" content="SQL语句可以单行或多行书写，以分号结尾 SQL语句可以使用空格&#x2F;缩进来增强语句的可读性 MySQL数据库的SQL语句不区分大小写，关键字建议使用大写">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-17T01:45:24.238Z">
-<meta property="article:modified_time" content="2024-10-17T08:53:37.386Z">
+<meta property="article:modified_time" content="2024-10-22T06:22:43.213Z">
 <meta property="article:author" content="喻">
 <meta name="twitter:card" content="summary">
   
@@ -264,7 +264,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">947字</span>
+      <span class="post-count">2.4k字</span>
     </span>
   </span>
 
@@ -273,7 +273,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">9分</span>
     </span>
   </span>
 </div>
@@ -395,6 +395,133 @@
 <p>例： TRUNCATE table sc_sheet3;</p>
 </blockquote>
 </blockquote>
+<h5 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h5><p>约束是作用于表中字段上的规则，用于限制存储在表中的数据。保证数据库中的数据的正确、有效性和完整性</p>
+<table>
+<thead>
+<tr>
+<th><strong>约束</strong></th>
+<th><strong>描述</strong></th>
+<th><strong>关键字</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>非空约束</td>
+<td>限制字段的数据不能为null</td>
+<td>Not null</td>
+</tr>
+<tr>
+<td>唯一约束</td>
+<td>保证该字段的所有数据都是唯一、不重复的</td>
+<td>Unique</td>
+</tr>
+<tr>
+<td>默认约束</td>
+<td>保存数据时，如果未指定该字段的值，则采用默认值</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>检查约束（8.0.1.6版本之后）</td>
+<td>保证字段值满足某一个条件</td>
+<td>Check</td>
+</tr>
+<tr>
+<td>主键约束</td>
+<td>主键是一行数据的唯一标识，要求非空且唯一</td>
+<td>priMary key</td>
+</tr>
+<tr>
+<td>自增约束</td>
+<td>列值会在行数增加自动递增</td>
+<td>Auto_increment</td>
+</tr>
+<tr>
+<td>外键约束</td>
+<td>用来让两张表的数据之间建立连接，保证数据的一致性和完整性</td>
+<td>Foreign key</td>
+</tr>
+</tbody></table>
+<p><strong>注意：约束是作用于表中字段上的，可以在创建表&#x2F;修改表的时候添加约束</strong></p>
+<blockquote>
+<blockquote>
+<p>非空约束</p>
+<p>在创建表&#x2F;修改表语句中加入约束关键字【not null】</p>
+<p>例：CREATE TABLE sc_sheet4( ID int not NULL COMMENT ‘编号’);</p>
+<p>alter TABLE sc_sheet2 ADD age int UNSIGNED not null COMMENT ‘年龄’;</p>
+</blockquote>
+<blockquote>
+<p>唯一约束</p>
+<p>在创建表&#x2F;修改表语句中加入约束关键字【Unique】</p>
+<p>例：CREATE TABLE sc_sheet4( ID int  unique COMMENT ‘编号’);</p>
+<p>alter TABLE sc_sheet2 ADD age int UNSIGNED unique COMMENT ‘年龄’;</p>
+</blockquote>
+<blockquote>
+<p>默认约束</p>
+<p>在创建表&#x2F;修改表语句中加入约束关键字【default+默认输出值】</p>
+<p>例：CREATE TABLE sc_sheet4( ID int default 1 COMMENT ‘编号’);</p>
+<p>alter TABLE sc_sheet2 ADD age int UNSIGNED default ‘未知’COMMENT ‘年龄’;</p>
+</blockquote>
+<blockquote>
+<p>检查约束</p>
+<p>在创建表&#x2F;修改表语句中加入约束关键字【check （条件）】</p>
+<p>例：CREATE TABLE sc_sheet4( ID int  check（id &lt;&gt;0 &amp;&amp; id &lt; 100） COMMENT ‘编号’);</p>
+<p>alter TABLE sc_sheet2 ADD age int UNSIGNED check（id &lt;&gt;0 &amp;&amp; id &lt; 100） COMMENT ‘年龄’;</p>
+</blockquote>
+<blockquote>
+<p>主键约束</p>
+<p>在创建表&#x2F;修改表语句中加入约束关键字【primary key】</p>
+<p>例：CREATE TABLE sc_sheet4( ID int primary key COMMENT ‘编号’);</p>
+<p>alter TABLE sc_sheet2 ADD age int UNSIGNED primary key COMMENT ‘年龄’;</p>
+</blockquote>
+<blockquote>
+<p>多个条件约束</p>
+<p>在创建表&#x2F;修改表语句中依次加入约束关键字</p>
+<p>例：CREATE TABLE sc_sheet4( ID int not null unique COMMENT ‘编号’);</p>
+</blockquote>
+<blockquote>
+<p>外键约束</p>
+<p>用来让两张表的数据之间建立连接，保证数据的一致性和完整性。拥有外键的表，被称为子表或从表，拥有主键的表，被称为父表或主表</p>
+<p>一致性：建立连接之后，从表的数据会受到主表影响，主表的主键增改删会让子表的外键收到影响</p>
+<p>外键约束的语法</p>
+<p>Create table 表名（字段名 数据类型  ,constraint  外键名称 foreign key (外键字段名 ) references 主表名（主表列名））</p>
+<p>Alter table 表名 add  constraint  外键名称 foreign key (外键字段名)  references 主表名（主表列名）</p>
+<p><strong>注意点：外键约束被视为一个字段&#x2F;列；外键连接的主表字段必须有主键约束</strong></p>
+<p>外键约束的删除</p>
+<p>Alter table 表名 drop Foreign key 外键名称</p>
+</blockquote>
+<p>行为</p>
+<p>对外键约束建立的一些删除&#x2F;更新行为</p>
+<table>
+<thead>
+<tr>
+<th><strong>行为</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>No action</td>
+<td>当在父表中删除&#x2F;更新对应记录时，首先检查记录是否有对应外键，如果有则不允许删除&#x2F;更新</td>
+</tr>
+<tr>
+<td>RESTRICT</td>
+<td>当在父表中删除&#x2F;更新对应记录时，首先检查记录是否有对应外键，如果有则不允许删除&#x2F;更新</td>
+</tr>
+<tr>
+<td>CASCADE</td>
+<td>当在父表中删除&#x2F;更新对应记录时，首先检查记录是否有对应外键，如果有，则也会同步删除&#x2F;更新子表中的记录</td>
+</tr>
+<tr>
+<td>Set null</td>
+<td>当在父表中删除对应记录时，首先检查记录是否有对应外键，如果有则设置子表中该外键值为null（当然这就要求外键值允许取null）</td>
+</tr>
+<tr>
+<td>Set DEFAULT</td>
+<td>父表有变更时，子表将外键列设置成一个默认的值</td>
+</tr>
+</tbody></table>
+<p>外键约束行为的语法：</p>
+<p>Alter table 表名 add constraint  外键名称 foreign key (外键字段名)  references 主表名（主表列名） on update cascade on delete cascade;</p>
+<p>Alter table 表名 add constraint  外键名称 foreign key (外键字段名)  references 主表名（主表列名） on update set null on delete set null;</p>
+</blockquote>
 <h2 id="DML语句"><a href="#DML语句" class="headerlink" title="DML语句"></a>DML语句</h2><blockquote>
 <p><strong>添加数据</strong></p>
 <ol>
@@ -424,6 +551,106 @@
 <p>例：delete from sc_sheet2 where 日期 &#x3D; ‘2024-10-29’;</p>
 <p><strong>注意点：Delete不能删除某一个维度&#x2F;字段的值</strong></p>
 <p><strong>Delete删除的是整行</strong></p>
+</blockquote>
+<h1 id="DQL语句"><a href="#DQL语句" class="headerlink" title="DQL语句"></a>DQL语句</h1><p>主要语句</p>
+<blockquote>
+<p>Select  字段列表</p>
+<p>From  表名列表</p>
+<p>Where  条件列表</p>
+<p>Group by  分组字段列表</p>
+<p>Having  分组后条件列表</p>
+<p>Order by  排序字段列表</p>
+<p>Limit  行限制数</p>
+<p><strong>注意点：select后面的非聚合函数字段名必须写在Group by后面</strong></p>
+<p><strong>Where只能对原数据表的列进行条件判断，不能对聚合函数创造的数据进行判断，having可以</strong></p>
+</blockquote>
+<p>条件查询运算符</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>比较运算符</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td align="left">&gt;&#x3D;</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td align="left">&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td align="left">&lt;&#x3D;</td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td align="left">&lt;&gt; 或 !&#x3D;</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td align="left">&#x3D;</td>
+<td>等于</td>
+</tr>
+<tr>
+<td align="left">Between …and..</td>
+<td>在某个范围内（包含最小最大值）</td>
+</tr>
+<tr>
+<td align="left">In(…)</td>
+<td>在in之后列表中的值，多选一</td>
+</tr>
+<tr>
+<td align="left">Like 通配符</td>
+<td>模糊匹配（%匹配任意个字符，_匹配单个字符）</td>
+</tr>
+<tr>
+<td align="left">Is null</td>
+<td>是null</td>
+</tr>
+<tr>
+<td align="left">And 或 &amp;&amp;</td>
+<td>并且（多个条件同时成立）</td>
+</tr>
+<tr>
+<td align="left">Or 或 ||</td>
+<td>或者（多个条件任意一个成立）</td>
+</tr>
+<tr>
+<td align="left">Not 或 !</td>
+<td>非，不是</td>
+</tr>
+</tbody></table>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>创建表的高级用法</p>
+<table>
+<thead>
+<tr>
+<th><strong>语法</strong></th>
+<th><strong>用途</strong></th>
+<th><strong>区别</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>as</td>
+<td>创建原表结构、复制原表数据</td>
+<td>只复制数据和表结构，不会复制索引</td>
+</tr>
+<tr>
+<td>like</td>
+<td>创建原表结构，不复制原表数据</td>
+<td>复制表机构，字段索引，但不会复制数据</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>CREATE TABLE 查询副表 LIKE <code>查询数据表</code>; </p>
+<p>INSERT INTO 查询副表  SELECT * FROM <code>查询数据表</code>;</p>
+</blockquote>
+<blockquote>
+<p>CREATE TABLE 查询副表 AS  SELECT * FROM <code>查询数据表</code>;</p>
 </blockquote>
 
     
@@ -563,6 +790,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2024/10/22/SQL%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          SQL函数
+        
+      </div>
+    </a>
   
   
     <a href="/2024/10/16/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
