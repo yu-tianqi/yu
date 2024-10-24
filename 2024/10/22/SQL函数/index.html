@@ -18,7 +18,7 @@
 <meta property="og:description" content="文本字符串函数 concat 表达式：concat（文本1，文本2····文本n） 含义：文本字符串拼接 1select concat（’hello’,’mysql’）">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-22T06:22:26.965Z">
-<meta property="article:modified_time" content="2024-10-22T08:56:32.590Z">
+<meta property="article:modified_time" content="2024-10-23T09:39:34.673Z">
 <meta property="article:author" content="喻">
 <meta name="twitter:card" content="summary">
   
@@ -264,7 +264,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">508字</span>
+      <span class="post-count">1.2k字</span>
     </span>
   </span>
 
@@ -273,7 +273,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -383,6 +383,129 @@
 <p>含义：返回x的y位小数值，如果x不足y位小数，会在后面补0直到补齐y位小数</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select format（3.14，4）</span><br></pre></td></tr></table></figure>
 
+
+</blockquote>
+<h1 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h1><table>
+<thead>
+<tr>
+<th><strong>函数</strong></th>
+<th><strong>表达式</strong></th>
+<th><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Curdate&#x2F;current_date()</td>
+<td>（）</td>
+<td>返回当前日期</td>
+</tr>
+<tr>
+<td>Curtime&#x2F;current_time()</td>
+<td>（）</td>
+<td>返回当前时间</td>
+</tr>
+<tr>
+<td>now</td>
+<td>（）</td>
+<td>返回当前日期和时间</td>
+</tr>
+<tr>
+<td>year</td>
+<td>（date）</td>
+<td>返回年份</td>
+</tr>
+<tr>
+<td>quarter</td>
+<td>（date）</td>
+<td>返回季度</td>
+</tr>
+<tr>
+<td>month</td>
+<td>（date）</td>
+<td>返回月份</td>
+</tr>
+<tr>
+<td>day</td>
+<td>（date）</td>
+<td>返回天数</td>
+</tr>
+<tr>
+<td>Date_add</td>
+<td>（date，interval expr unit）</td>
+<td>返回参数一在参数二时间间隔后的日期</td>
+</tr>
+<tr>
+<td>Datediff</td>
+<td>(date1,date2)</td>
+<td>参数一起始日期，参数二结束日期，返回参数一减去参数二的天数</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Date_add</strong></p>
+<p>表达式：DATE_ADD(date,INTERVAL expr unit)</p>
+<p>含义：参数一为起始日期</p>
+<p>参数二为要间隔的时间，固定写法：interval+时间间隔+时间单位</p>
+<p>时间单位有：day、month、quarter、year</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT DATE_ADD(NOW(),INTERVAL 5 QUARTER);</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<blockquote>
+<p><strong>Datediff</strong></p>
+<p>表达式：DATEdiff(date1,date2)</p>
+<p>含义：参数一为起始日期</p>
+<p>参数二为结束日期计算两个日期之间的天数，参数一减去参数二</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT DATEDIFF(&#x27;2024-8-5&#x27;,&#x27;2024-8-2’);</span><br><span class="line">SELECT DATEDIFF(now(),now()+2);</span><br><span class="line">SELECT DATEDIFF(curdate(),curdate()+2);</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h1 id="转换函数"><a href="#转换函数" class="headerlink" title="转换函数"></a>转换函数</h1><blockquote>
+<p><strong>cast函数</strong></p>
+<p>表达式：cast（expr as type）</p>
+<p>含义：Expr参数为你想转化的表达式或字段</p>
+<p>As为固定写法</p>
+<p>Type参数为你想转化成的数据类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT CAST(`日期` as CHAR(5)) FROM `查询数据表`;</span><br></pre></td></tr></table></figure>
+
+<p>注意点：type为int时不能直接写int，要写unsigned&#x2F;signed int；Type不能写varchar，只能写char</p>
+</blockquote>
+<blockquote>
+<p><strong>convert</strong></p>
+<p>表达式：convert（expr ，type）</p>
+<p>含义：Expr参数为你想转化的表达式或字段</p>
+<p>​	    Type参数为你想转化成的数据类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT Convert(`日期` ， CHAR(5)) FROM `查询数据表`;</span><br></pre></td></tr></table></figure>
+
+<p>注意点：type为int时不能直接写int，要写unsigned&#x2F;signed int；Type不能写varchar，只能写char</p>
+</blockquote>
+<h1 id="流程（逻辑）函数"><a href="#流程（逻辑）函数" class="headerlink" title="流程（逻辑）函数"></a>流程（逻辑）函数</h1><blockquote>
+<p><strong>if  （条件,结果1，结果2）</strong></p>
+<p>含义：条件1为true返回结果1，否则返回结果2</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT `日期`,If（`采购重量` &gt;10 ， &#x27;第一阶段‘ ，&#x27;第二阶段‘ ）FROM `查询数据表`;</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<blockquote>
+<p><strong>If null  （值&#x2F;字段，参数2）</strong>  </p>
+<p>含义：参数一不为null，返回参数1，否则返回参数2</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT `日期`,If（`采购重量`  ， ‘注意空值’）FROM `查询数据表`;</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<blockquote>
+<p><strong>case when</strong> </p>
+<blockquote>
+<p> Case when 条件1 then 结果1 when 条件2 then 结果2 ···· else 结果n end  </p>
+<p>含义：条件1为true返回结果1，条件2为true 返回结果2····都不为true返回结果n</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT `日期`,case WHEN `采购重量` &gt;10 THEN &#x27;第一阶段&#x27; WHEN `采购重量`&gt; 20 then &#x27;第二阶段&#x27; else &#x27;第三阶段&#x27; END as 阶段FROM `查询数据表`;</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<blockquote>
+<p>Case 字段 when 条件1 then 结果1 ···· else 结果n end </p>
+<p>含义： 字段符合条件1返回结果1，符合条件2返回结果2····都不符合返回结果n</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT `日期`,case `蔬菜名` WHEN  &#x27;黄瓜&#x27; THEN &#x27;爱吃&#x27; WHEN &#x27;小黄瓜&#x27; then &#x27;爱吃&#x27; else &#x27;不爱吃&#x27; END as 喜好FROM `查询数据表`;</span><br></pre></td></tr></table></figure>
+
+</blockquote>
 </blockquote>
 
     
