@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2024 | 小喻的博客</title>
+  <title>python数据类型 | 小喻的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="小喻的博客">
-<meta property="og:url" content="http://example.com/archives/2024/index.html">
+  <meta name="description" content="此篇文章主要是针对字符串、列表、元组、字典、集合五个数据类型进行讲解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python数据类型">
+<meta property="og:url" content="http://example.com/2024/11/11/python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="小喻的博客">
+<meta property="og:description" content="此篇文章主要是针对字符串、列表、元组、字典、集合五个数据类型进行讲解">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-11T03:04:48.270Z">
+<meta property="article:modified_time" content="2024-11-11T03:36:47.154Z">
 <meta property="article:author" content="喻">
 <meta name="twitter:card" content="summary">
   
@@ -217,42 +221,289 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <!-- 目录内容 -->
+        
+<!-- 目录内容结束 -->
+
+
+<article id="post-python数据类型" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      python数据类型
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2024/11/11/python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
         <time datetime="2024-11-11T03:04:48.270Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-11-11</time>
 </a>
 
+  
+  
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.9k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">7分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>此篇文章主要是针对字符串、列表、元组、字典、集合五个数据类型进行讲解</p>
+<span id="more"></span>
+
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><blockquote>
+<p>单引号定义法：str &#x3D; ‘赛城技术’</p>
+<p>双引号定义法：str &#x3D; “赛城技术”</p>
+<p>三引号定义法：str &#x3D; “””赛城技术”””</p>
+<p>三引号定义法和多行注释的区别：使用变量接收它，它就是字符串不使用变量接收它，它就是多行注释</p>
+<hr>
+<p>字符串拼接有四种方法</p>
+<ol>
+<li><p>字符串和字符串之间和通过“+”号进行拼接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str1=&quot;hello&quot;</span><br><span class="line">str2=&quot;world&quot;</span><br><span class="line">print(str1+str2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过占位符的形式进行拼接。拼接精度使用“m.n”来控制数据的宽度和经度M控制宽度，要求是数字，设置的宽度小于数字自身时，不生效。N控制小数点的精度，要求是数字，会进行小数的四舍五入</p>
+<hr>
+<p>%3d：表示将整数的的宽度控制在3位，如果整数是23，就会变成 [空格]23，用1个空格补足宽度</p>
+<p>%3.2f：表示将浮点数的宽度控制为3位，将小数位的精度设为2，小数点和小数部分也会放入宽度计算；例如对3.14159设置了%5.2f后，结果是：[空格]3.14，用1个空格补足宽度，小数部分四舍五入保留2位小数</p>
+<p>%.2f：表示将浮点数小数位精度设为2，宽度不限；例如对3.14159设置了%.3f之后，结果是3.142</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str1=&quot;hello&quot;</span><br><span class="line">str2=&quot;%sworld&quot;%str1</span><br><span class="line">print(str2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过”内容{num}”.format（变量）的格式来快速格式化（python2.6之后）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">str1=&quot;yu&quot;</span><br><span class="line">str2=&quot;world&quot;</span><br><span class="line">str3=&quot;hello&quot;</span><br><span class="line">print(&quot;你好,&#123;2&#125;,&#123;1&#125;,&#123;0&#125;&quot;.format(str1, str2, str3))</span><br><span class="line"></span><br><span class="line">#打印结果为：你好,hello,world,yu</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过f”内容{变量}”的格式来快速格式化（python3.6之后）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">float1 = 3.14</span><br><span class="line">int1 = 9</span><br><span class="line">print（f&quot;圆周率是&#123;float1&#125;，今天一共来了&#123;int1&#125;个人&quot;）</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<p>四种拼接对比方法</p>
+<table>
+<thead>
+<tr>
+<th><strong>拼接方法</strong></th>
+<th><strong>特点</strong></th>
+<th><strong>类型</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>方法一：+号</td>
+<td>字符串和字符串连接，不能用于字符串和数字类型连接</td>
+<td>拼接</td>
+</tr>
+<tr>
+<td>方法二：占位符%+类型符</td>
+<td>可以用于各种类型之间的连接，还可以做精度控制</td>
+<td>格式化</td>
+</tr>
+<tr>
+<td>方法三：”内容{num}”.format（变量）</td>
+<td>可以用与各种类型之间的连接，可以做位置调整，但不能做精度控制，python2.6版本之后可用</td>
+<td>格式化</td>
+</tr>
+<tr>
+<td>方法四：f“内容{变量}”</td>
+<td>可以用与各种类型之间的连接，可以做位置调整，但不能做精度控制，python3.6版本之后可用</td>
+<td>格式化</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>索引</strong></p>
+<p>语法：str[num]</p>
+<p>含义：num代表你想要的索引的数据在字符串的字符（下标）数</p>
+<p><strong>切片</strong></p>
+<p>语法：str[[num1]:[num2]:[step]]</p>
+<p>含义：num1代表你想要截取的起始位置，省略时，代表从左边开始截取，参数二变为截取的长度。num2代表你想要的截取的结束位置，省略时，代表从参数一开始截取剩下的所有数据。参数3为步长，可省略，省略默认为1</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th><strong>字符串大小写语法</strong></th>
+<th><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>str.upper()</td>
+<td>所有字母大写</td>
+</tr>
+<tr>
+<td>Str.lower()</td>
+<td>所有字母小写</td>
+</tr>
+<tr>
+<td>Str.capitalize()</td>
+<td>首字母大写，其他字母小写</td>
+</tr>
+<tr>
+<td>Str.title()</td>
+<td>每个单词首字母大写，其他小写</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>字符查找</strong>-<strong>find</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>字符串大小写语法</strong></th>
+<th><strong>含义</strong></th>
+<th><strong>注意点</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>str.find(字符，[num1],[num2])</td>
+<td>在指定字符串中查找某个字符第一次出现的位置参数一代表你要查找的字符，参数二的含义是从左边开始，第几位开始查,可省略，省略默认为从第0位开始查找参数三含义是，结束位置</td>
+<td>字符串中的第一位，返回的时候返回第0位当查找的值不存在时，返回-1</td>
+</tr>
+<tr>
+<td>Str.rfind(字符，[num1]，[num2])</td>
+<td>在指定字符串中查找某个字符最后一次出现的位置参数一代表你要查找的字符，参数二的含义是从左边开始，第几位开始查,可省略，省略默认为从第0位开始查找参数三含义是，结束位置</td>
+<td>Rfind是从右边开始查找，所以查出来的值是最后一次出现的位置返回的位置数也是从左开始数其余和find一样</td>
+</tr>
+</tbody></table>
+<p><strong>字符查找-index</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>字符串大小写语法</strong></th>
+<th><strong>含义</strong></th>
+<th><strong>注意点</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>str.index(字符，[num1],[num2])</td>
+<td>在指定字符串中查找某个字符第一次出现的位置参数一代表你要查找的字符，参数二的含义是从左边开始，第几位开始查,可省略，省略默认为从第0位开始查找参数三含义是，结束位置</td>
+<td>字符串中的第一位，返回的时候返回第0位当查找的值不存在时，会报错</td>
+</tr>
+<tr>
+<td>Str.rindex(字符，[num1]，[num2])</td>
+<td>在指定字符串中查找某个字符最后一次出现的位置参数一代表你要查找的字符，参数二的含义是从左边开始，第几位开始查,可省略，省略默认为从第0位开始查找参数三含义是，结束位置</td>
+<td>Rindex是从右边开始查找，所以查出来的值是最后一次出现的位置返回的位置数也是从左开始数其余和index一样</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>字符修剪-strip</strong></p>
+<p>语法：str.strip([字符])</p>
+<p>含义1（删除空格）：删除指定字符，可省略，省略默认为删除左右两边的空格</p>
+<p>含义2（删除字符）：给到字符，就会删除左右两边指定的字符，可以指定多个</p>
+<p>注意点：如果原字符串左右两边有空格，给字符时，会无法删除，因为左右两边的空格会被识别为左右两边的第一个字符。只会删除左右两边的指定字符，如果没有指定字符，则不会进行删除</p>
+<hr>
+<p><strong>字符修剪-lstrip&#x2F;rstrip</strong></p>
+<p>语法：str.lstrip([字符]) str.rstrip([字符])</p>
+<p>含义1（删除空格）：删除指定字符，可省略，lstrip默认为删除左边的空格，rstrip默认为删除右边的空格</p>
+<p>含义2（删除字符）：给到字符， lstrip默认为删除左边的字符，rstrip默认为删除右边的字符，可以指定多个</p>
+<p>注意点：如果原字符串左右两边有空格，给字符时，会无法删除，因为左右两边的空格会被识别为左右两边的第一个字符。只会删除左右两边的指定字符，如果没有指定字符，则不会进行删除</p>
+<hr>
+<p><strong>字符修剪-replace</strong></p>
+<p>语法：str.replace(旧字符，新字符）</p>
+<p>含义：参数一为你需要替代的字符，参数二为你想要换成的字符</p>
+<p>注意点：空值替换为空值，占位不变；但是非空值替换为空值后，原非空值字符位会被取消</p>
+<hr>
+<p><strong>不变和可变字符串</strong></p>
+<p>定义：字符串一旦被定义，则不可变，想要改变字符串则需要用到修剪语法；如果想要全部修改，则可以使用str.stringio的语法进行设置，也就是把不变字符串改成可变字符串</p>
+<p>定义可变字符串语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from io import StringIO</span><br><span class="line">str1 = &quot;hello world&quot;</span><br><span class="line">sio = StringIO(str1)</span><br><span class="line">Print(sio.getvalue())	#查看可变字符串的内容</span><br><span class="line">Sio.write(更改的内容)	#更改可变字符串的值</span><br><span class="line">Sio.seek(num)	#调整可变字符串指针的位置</span><br><span class="line">调整的目的是：从第几位开始改变内容</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/zifubao.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2024/11/11/python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" target="_blank">python数据类型</a>
-  
-    </h1>
-  
+      </a>
+    </div>
+    
 
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          喻
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://example.com/2024/11/11/python数据类型/" title="python数据类型" target="_blank">http://example.com/2024/11/11/python数据类型/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/yu-tianqi/yu-tianqi.github.io.git" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
 
-        <div class="article-info info-on-right">
-          
-          
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -265,408 +516,115 @@
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/11/11/python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2024/11/11/python%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="archive-article-date">
-        <time datetime="2024-11-11T02:03:00.062Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-11-11</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2024/11/11/python%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python循环语句</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2024/11/11/python%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" target="_blank">python循环语句</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2024/11/11/python%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/" class="archive-article-date">
-        <time datetime="2024-11-11T01:45:23.085Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-11-11</time>
-</a>
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2024/11/11/python%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/" target="_blank">python选择语句</a>
-  
-    </h1>
-  
+<div id="SOHUCS" sid="python数据类型" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
 
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2024/11/06/python%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0/" class="archive-article-date">
-        <time datetime="2024-11-06T03:36:11.212Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-11-06</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2024/11/06/python%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0/" target="_blank">python基本函数</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2024/11/06/python%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" class="archive-article-date">
-        <time datetime="2024-11-06T02:50:09.414Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-11-06</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2024/11/06/python%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" target="_blank">python基础概念</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2024/11/04/%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/" class="archive-article-date">
-        <time datetime="2024-11-04T09:15:24.826Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-11-04</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2024/11/04/%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/" target="_blank">窗口函数</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/sql//" class="article-tag-list-link color4">sql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2024/10/29/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E8%BF%9E%E6%8E%A5/" class="archive-article-date">
-        <time datetime="2024-10-29T09:22:11.258Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-29</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2024/10/29/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E8%BF%9E%E6%8E%A5/" target="_blank">多表查询与连接</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/sql//" class="article-tag-list-link color4">sql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2024/10/22/SQL%E5%87%BD%E6%95%B0/" class="archive-article-date">
-        <time datetime="2024-10-22T06:22:26.965Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-22</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2024/10/22/SQL%E5%87%BD%E6%95%B0/" target="_blank">SQL函数</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/sql//" class="article-tag-list-link color4">sql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2024/10/17/SQL%E9%80%9A%E7%94%A8%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-        <time datetime="2024-10-17T01:45:24.238Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-17</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2024/10/17/SQL%E9%80%9A%E7%94%A8%E8%AF%AD%E6%B3%95/" target="_blank">SQL通用语法及分类</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/sql//" class="article-tag-list-link color4">sql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2024/10/16/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-        <time datetime="2024-10-16T09:34:31.123Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-16</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2024/10/16/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" target="_blank">冒泡排序</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2024/page/2/">2</a><a class="extend next" rel="next" href="/archives/2024/page/2/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -707,8 +665,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

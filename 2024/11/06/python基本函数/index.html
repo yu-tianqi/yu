@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="print函数 print函数是打印需要的数据在命令行中或者是将数据写入到文件中。 表达式为：Print（*objects，[sep&#x3D;‘’],[end&#x3D;‘\n’],[file&#x3D;sys.stdout]） 参数一：输出的对象，可以是多个，也可以是单个，多个的时候，需要用英文逗号隔开 参数二：用指定符号来间隔多个对象，可省略，省略的时候默认用空格来间隔 参数三：用来设定以什">
+  <meta name="description" content="print函数 print函数是打印需要的数据在命令行中或者是将数据写入到文件中。 表达式为：Print（*objects，[sep&#x3D;‘’],[end&#x3D;‘\n’],[file&#x3D;sys.stdout]）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python基本函数">
 <meta property="og:url" content="http://example.com/2024/11/06/python%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="小喻的博客">
-<meta property="og:description" content="print函数 print函数是打印需要的数据在命令行中或者是将数据写入到文件中。 表达式为：Print（*objects，[sep&#x3D;‘’],[end&#x3D;‘\n’],[file&#x3D;sys.stdout]） 参数一：输出的对象，可以是多个，也可以是单个，多个的时候，需要用英文逗号隔开 参数二：用指定符号来间隔多个对象，可省略，省略的时候默认用空格来间隔 参数三：用来设定以什">
+<meta property="og:description" content="print函数 print函数是打印需要的数据在命令行中或者是将数据写入到文件中。 表达式为：Print（*objects，[sep&#x3D;‘’],[end&#x3D;‘\n’],[file&#x3D;sys.stdout]）">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-06T03:36:11.212Z">
-<meta property="article:modified_time" content="2024-11-06T03:42:54.511Z">
+<meta property="article:modified_time" content="2024-11-11T01:40:01.785Z">
 <meta property="article:author" content="喻">
 <meta name="twitter:card" content="summary">
   
@@ -142,7 +142,7 @@
       
       
       <a class="forkMe" style="position:absolute;z-index:999;top:0;right:0.5em;" 
-        href="https://gitee.com/y_yuyi/yu.gitee.io.git" target="_blank">
+        href="https://github.com/yu-tianqi/yu-tianqi.github.io" target="_blank">
         <img src="/img/forkme.png"
           class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
       
@@ -264,7 +264,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">208字</span>
+      <span class="post-count">1.9k字</span>
     </span>
   </span>
 
@@ -273,7 +273,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">7分</span>
     </span>
   </span>
 </div>
@@ -287,12 +287,145 @@
     <h4 id="print函数"><a href="#print函数" class="headerlink" title="print函数"></a>print函数</h4><blockquote>
 <p>print函数是打印需要的数据在命令行中或者是将数据写入到文件中。</p>
 <p>表达式为：<strong>Print（*objects，[sep&#x3D;‘’],[end&#x3D;‘\n’],[file&#x3D;sys.stdout]）</strong></p>
+<span id="more"></span>
+
 <p>参数一：输出的对象，可以是多个，也可以是单个，多个的时候，需要用英文逗号隔开</p>
 <p>参数二：用指定符号来间隔多个对象，可省略，省略的时候默认用空格来间隔</p>
 <p>参数三：用来设定以什么结尾，可省略，省略的时候默认为以换行符\n结尾</p>
 <p>参数四：要写入的文件对象，可以省略，省略的时候默认为sys.stdout，既是输出到命令行工具</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = 1</span><br><span class="line">b = &quot;abc&quot;</span><br><span class="line">print(a)	#打印变量a的值，1</span><br><span class="line">print(b)	#打印变量b的值，abc</span><br><span class="line">print(&quot;abc&quot;) 	#打印字符串abc</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">a = 1</span><br><span class="line">b = &quot;abc&quot;</span><br><span class="line"># 第一种用法，只用第一个参数输出对象</span><br><span class="line">print(a)	#打印变量a的值，1</span><br><span class="line">print(b)	#打印变量b的值，abc</span><br><span class="line">print(&quot;abc&quot;) 	#打印字符串abc</span><br><span class="line"></span><br><span class="line"># 第二种用法，加上第二个参数sep</span><br><span class="line">print(a,b,sep=&#x27;-&#x27;)	#输出为：1-abc</span><br><span class="line"></span><br><span class="line">#第三种用法，加上第三个参数end</span><br><span class="line">print(a,b,sep=&quot;-&quot;,end=&quot;,&quot;)	#输出结果：1-abc,</span><br><span class="line"></span><br><span class="line">#第四种用法，加上第四个参数file</span><br><span class="line">f1=open(&quot;abc.txt&quot;,&quot;w&quot;)</span><br><span class="line">print(a,b,sep=&quot;-&quot;,file=f1) #将输出的结果1-abc写入到abc.txt文件中</span><br></pre></td></tr></table></figure>
 
+<p><strong>print格式化输出：</strong>用格式符号（%+某个字母）代替变量写进输出对象里，然后在后面用【%+变量名】的形式跟上变量的值，从而实现数据的格式化输出，常用格式化字符包括（%s，%d，%f）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = &quot;yu&quot;</span><br><span class="line">age = &quot;18&quot;</span><br><span class="line">print(&quot;我的姓名是%s,我今年%s岁了&quot;%(name,age))	#我的姓名是yu,我今年18岁了</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意占位符和后面的变量要一一对应</strong></p>
+</blockquote>
+<h4 id="input函数"><a href="#input函数" class="headerlink" title="input函数"></a>input函数</h4><blockquote>
+<p>表达式：input（[prompt]）</p>
+<p>Input函数和print函数对应，input函数是数据输入函数，用以获取键盘输入的数据。</p>
+<p>参数prompt：在屏幕上显示一个字符串，通常作为提示用户输入的信息；可省略，省略时默认不给用户任何提示。</p>
+<p><strong>注意点：</strong>input函数输入的数据是字符串类型，如果想要int类型的数据，需要使用int(input(“请输入数字：”))。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">input(&quot;请输入你的姓名：&quot;)	#会在控制台显示“请输入你的姓名：”，需要自己在冒号后面输入相应的数据</span><br></pre></td></tr></table></figure>
+
+
+
+<p>input可以多个变量输入，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">input_data = input(&quot;请输入你的名字和年龄，用空格分隔: &quot;)</span><br><span class="line"></span><br><span class="line">name, age_str = input_data.split()   # 假设用户总是输入两个由空格分隔的值</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h4 id="open函数"><a href="#open函数" class="headerlink" title="open函数"></a>open函数</h4><blockquote>
+<p>语法：open(name，[mode]，[encoding])</p>
+<p>参数一name：文件路径，如果和py文件处于同一个文件夹，直接写文件名；如果不在同一个文件夹，那就需要调用完整的文件路径</p>
+<p>参数二mode：打开模式，有很多种，常用的是“w”，“r”，r为读，w为写；默认为r，默认的时候文件必须存在，否则就会报错</p>
+<p>参数三encoding：编码方式，默认为utf-8</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f1 = open(&quot;C:\\Users\\Administrator\\Desktop\\file写入.txt&quot;,&#x27;w&#x27;)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th><strong>Mod****参数</strong></th>
+<th><strong>可做操作</strong></th>
+<th><strong>若文件不存在</strong></th>
+<th><strong>如何处理原内容</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>只可读</td>
+<td>报错</td>
+<td>-</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>可读可写</td>
+<td>报错</td>
+<td>-</td>
+</tr>
+<tr>
+<td>w</td>
+<td>只可写</td>
+<td>新建</td>
+<td>覆盖</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>可读可写</td>
+<td>新建</td>
+<td>覆盖</td>
+</tr>
+<tr>
+<td>a</td>
+<td>只可写</td>
+<td>新建</td>
+<td>末尾追加</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>可读可写</td>
+<td>新建</td>
+<td>末未追加</td>
+</tr>
+<tr>
+<td>b</td>
+<td>二进制模式</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+</td>
+<td>读写模式</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>b（二进制模式）：用于传输数据或者存储数据的一种数据格式；当读取非文本文件的时候,比如要读取mp3,图像,视频等信息的时候就需要用到二进制模式</p>
+<hr>
+<p><strong>文件读取</strong></p>
+<p>当需要读取文件时，需要先使用open函数打开文件，然后用read（num）方法读取文件内容。num表示要从文件中读取的数据长度（单位是字符），如果没有传入num，name就表示读取文件中所有的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fl1=open(&quot;C:\\Users\\Administrator\\Desktop\\file写入.txt&quot;,&#x27;r&#x27;,encoding=&#x27;utf_8&#x27;)</span><br><span class="line">f = fl1.read(2)	#读取文件中前两个字符，如果多次使用read（2），则会依次往后读取两个字符</span><br><span class="line">print(f)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Readline（）方法</p>
+<p>表达式：文件对象.readline（）</p>
+<p>含义：读取文件中的一行数据，返回一行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fl1=open(&quot;C:\\Users\\Administrator\\Desktop\\file写入.txt&quot;,&#x27;r&#x27;,encoding=&#x27;utf_8&#x27;)</span><br><span class="line">f = fl1.readline()	#读取文件第一行数据，如果多次使用readline（），则会往后依次读取每一行</span><br><span class="line">print(f)</span><br></pre></td></tr></table></figure>
+
+<p>Readlines（num）方法</p>
+<p>表达式：文件对象.readlines（）</p>
+<p>含义：读取文件中的所有行数据，num代表需要字符数所在行以及之前所有行，不写则默认返回所有行（列表）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">file写入.txt内容：</span><br><span class="line">人生苦短</span><br><span class="line">我爱python</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fl1=open(&quot;C:\\Users\\Administrator\\Desktop\\file写入.txt&quot;,&#x27;r&#x27;,encoding=&#x27;utf_8&#x27;)</span><br><span class="line">f = fl1.readlines()		#读取文件所有内容</span><br><span class="line">f1 = fl1.readlines(5)	#返回的结果是两行数据，第一行为四个字符，但是包括一个换行符，实际上是五个字符，换行符到下一行了，所以包含下一行数据和之前的数据</span><br><span class="line">f2 = fl1.readlines(4)	#只返回第一行数据，因为第一行数据有四个字符和一个换行符，但是还没有换行到下一行，所以只返回第一行数据</span><br><span class="line">print(f)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>文件写入</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">文件名.write(写入的内容)</span><br><span class="line"></span><br><span class="line">覆盖写法：</span><br><span class="line">fl1=open(&quot;C:\\Users\\Administrator\\Desktop\\file写入.txt&quot;,’w+&#x27;)</span><br><span class="line">f = fl1.write(&#x27;人才中心&#x27;)</span><br><span class="line">print(f)</span><br><span class="line"></span><br><span class="line">添加写法：</span><br><span class="line">fl1=open(&quot;C:\\Users\\Administrator\\Desktop\\file写入.txt&quot;,’a+&#x27;)</span><br><span class="line">f = fl1.write(&#x27;人才中心&#x27;)</span><br><span class="line">print(f)</span><br></pre></td></tr></table></figure>
+
+<p>如果是将一个文件内容复制到另一个文件中，需要同时使用read()方法和write()方法，先打开一个被复制的文件，将文件内容读取出来，然后使用写模式打开一个新文件，将读取的内容写入到新文件中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">例：复制图片文件到新文件中</span><br><span class="line">f = open(&quot;文件\\abc.jpg&quot;, &#x27;rb&#x27;)</span><br><span class="line">a = f.read()	#以二进制方式读取图片文件内容</span><br><span class="line">f1 = open(&quot;文件\\abc1.jpg&quot;, &#x27;wb&#x27;)</span><br><span class="line">f1.write(a)		#以二进制方式打开一个新的可写入文件，将读取的文件内容写入到新文件中</span><br><span class="line">f.close()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>文件关闭</strong></p>
+<p>文件使用完要关闭，不然会一直占用内存</p>
+<p>关闭方式：用 【文件名.close()】语句进行关闭</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fl1=open(&quot;C:\\Users\\Administrator\\Desktop\\file写入.txt&quot;,&#x27;a+&#x27;)</span><br><span class="line"></span><br><span class="line">fl1.close()</span><br></pre></td></tr></table></figure>
+
+<p>用【with open 文件名 as 变量】的方式使用文件，使用完会自动关闭</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">with open(&quot;C:\\Users\\Administrator\\Desktop\\file写入.txt&quot;,&#x27;r&#x27;) as fl2:   </span><br><span class="line">	f = fl2.read()    </span><br><span class="line">	print(f)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="len函数"><a href="#len函数" class="headerlink" title="len函数"></a>len函数</h4><blockquote>
+<p>语法：len(对象)</p>
+<p>含义：返回对象长度；对象是字符串时，返回字符串长度(字符数)；对象是列表、元组、集合时，返回元素个数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Str1 = ‘人生苦短，我爱python’</span><br><span class="line">len1 = len（str1）</span><br><span class="line">Print（len1）	#打印结果为13，其中逗号也算一个字符</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str1 = [1,&#x27;yu&#x27;,3]</span><br><span class="line">len1 = len(str1)</span><br><span class="line">print(len1)		#打印结果为3，数据集中只有三个元素</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="range函数"><a href="#range函数" class="headerlink" title="range函数"></a>range函数</h4><blockquote>
+<p>语法：range([start], stop，[step])</p>
+<p>含义：参数一：起始值，可省略，省略时默认从0开始，包括起始值本身</p>
+<p>参数二：结束值，但不包括结束值本身</p>
+<p>参数三：步长，可省略，省略时默认为1整体含义：根据条件创建整数列表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1 = range(1,10,2)</span><br><span class="line">print(list(list1))	#输入结果为[1，3，5，7，9]，开始位置包括1，但结束位置不包括10</span><br></pre></td></tr></table></figure>
+
+<p>注意点：python3里，range函数生成一个对象，如果想看列表，需要用到列表转换函数</p>
 </blockquote>
 
     
@@ -432,6 +565,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2024/11/11/python%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          python选择语句
+        
+      </div>
+    </a>
   
   
     <a href="/2024/11/06/python%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" id="article-nav-older" class="article-nav-link-wrap">
